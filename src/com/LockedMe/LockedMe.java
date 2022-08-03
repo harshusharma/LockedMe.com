@@ -95,7 +95,6 @@ public class LockedMe {
 				}	else 
 						{
 						System.out.println("Program Closed");
-						}
-		} while(repeat);	
+						}	
 	}
 }
