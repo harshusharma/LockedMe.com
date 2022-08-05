@@ -5,39 +5,51 @@ import java.io.IOException;
 
 public class DifferentOperation {
 	
-	public boolean addition(String textinput1) {   				//Addition method declaring
-	boolean result1=false;
-		try {
-        File fileInput = new File("C:\\Users\\LPTE\\eclipse-workspace\\"+textinput1);
-        if(fileInput.createNewFile())
+	public boolean addition(String textinput1) throws IOException {   				//Addition method declaring
+		boolean result1=false;
+		String[] pathNames = { "E:", "Project", textinput1};
+		String pathSeperator = System.getProperty("file.separator");
+		String path = String.join(pathSeperator, pathNames);
+		
+        File fileInput = new File(path);
+        if(fileInput.createNewFile()) {
         	result1= true;
-        else
+        } else {
         	result1= false;
 		}
-    catch(IOException io) {
-        io.printStackTrace();
-    		}
-	
-		return result1;
+        return result1;
 	}
 	
 	
-	public boolean deletion(String textinput2) {   				//Deletion method declaring
+	public boolean deletion(String textinput2) throws IOException {   				//Deletion method declaring
 		boolean result2=false;
-			{
-			File fileInput1 = new File("c://Users//LPTE//eclipse-workspace//"+textinput2+".txt"); 
-	        if(fileInput1.delete())
-	        	result2 = true;
-	        	else
-	        	result2 = false;
-			}
+		String[] pathNames = { "E:", "Project", textinput2};
+		String pathSeperator = System.getProperty("file.separator");
+		String path = String.join(pathSeperator, pathNames);	
+//		String path = "C:" + pathSeperator + "Users" + pathSeperator
+		File fileInput1 = new File(path); 
+		
+		if(fileInput1.exists()) {
+			String cannonicalPath = fileInput1.getCanonicalPath();
+			if (cannonicalPath.equals(path)) {
+//				System.out.println("Matched");
+				if(fileInput1.delete())
+					result2 = true;
+				} else {
+//				System.out.println("Not Matched");
+				result2 = false;
+				}
+			}				
 			return result2;
 		}
 	
 	public boolean search(String textinput3) {   				//Search method declaring
-			File fileInput3 = new File("c://Users//LPTE//eclipse-workspace//"+textinput3+".txt");
-			boolean result3 = fileInput3.exists();
-			return result3;
+		String[] pathNames = { "E:", "Project", textinput3};
+		String pathSeperator = System.getProperty("file.separator");
+		String path = String.join(pathSeperator, pathNames);		
+		File fileInput3 = new File(path);
+		boolean result3 = fileInput3.exists();					//checking & deleting the file
+		return result3;
 		}
 
 }

@@ -9,14 +9,18 @@ import java.util.TreeSet;
 
 public class DisplayListOfFileName {
 
-	public static void display()
+	public void display()
 	{
-		File fileInput = new File("c://Users//LPTE//eclipse-workspace//");
+		String[] pathNames = { "E:", "Project"};
+		String pathSeperator = System.getProperty("file.separator");
+		String path = String.join(pathSeperator, pathNames);
+		File fileInput = new File(path);
 		
 		if(fileInput.isDirectory()){
 			List <String> listFile = Arrays.asList(fileInput.list());
-			System.out.println("Listing files unsorted");
+			System.out.println("Listing sorted files");
 			for(String s:listFile){
+				
 				System.out.println(s);
 			}
 			
@@ -30,7 +34,6 @@ public class DisplayListOfFileName {
 			System.out.println("Listing files sorted using TreeSet");
 			for(String s:set){
 				System.out.println(s);*/
-			}
-			
-		}
+		}		
 	}
+}
