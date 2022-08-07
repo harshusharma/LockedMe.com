@@ -45,12 +45,13 @@ public class LockedMe {
 					System.out.println("4. Back");
 					
 					try
-					{	Scanner UserChoiceOfOperation = new Scanner (System.in);                      // exception handling
+					{	operationSelected=0;
+						Scanner UserChoiceOfOperation = new Scanner (System.in);                      // exception handling
 						operationSelected=UserChoiceOfOperation.nextInt();
 					}
-					catch (Exception e) {}
+					catch (Exception e) {} 
 					
-						switch(operationSelected)
+					switch(operationSelected)
 						{
 							case 1: 					//Add file method call
 								System.out.println("Enter the name of the file to be added in directory" + " : ");
