@@ -17,6 +17,7 @@ public class LockedMe {
 		{
 			int choice = 0;
 			repeatMainContext=true;
+			System.out.println("-----------------------------------------------------------------");
 			System.out.println("Please select the option from the following:");
 			System.out.println("1. Display all available file Names in directory");
 			System.out.println("2. Different Operations to Perform in directory");
@@ -28,7 +29,7 @@ public class LockedMe {
 			if(choice==1)
 			{
 				DisplayListOfFileName listObj = new DisplayListOfFileName();
-				System.out.println("The of available files in directory are as follows:");
+				System.out.println("The available files in directory are as follows:");
 				listObj.display();
 			}
 			else if(choice==2)
@@ -36,6 +37,7 @@ public class LockedMe {
 				do {
 					repeatOptions = true;
 					DifferentOperation DiffOperationObject = new DifferentOperation ();
+					System.out.println("-----------------------------------------------------------");
 					System.out.println("Please select the Operation to Perform from the following");
 					System.out.println("1. Add File");
 					System.out.println("2. Delete File");

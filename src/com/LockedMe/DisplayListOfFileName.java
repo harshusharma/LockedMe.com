@@ -23,17 +23,6 @@ public class DisplayListOfFileName {
 				
 				System.out.println(s);
 			}
-			
-		/*	Collections.sort(listFile);
-			System.out.println("Listing files sorted ussing collction.sort()");
-			for(String s:listFile){
-				System.out.println(s);
-			}
-			
-			Set<String> set = new TreeSet<String>(listFile);
-			System.out.println("Listing files sorted using TreeSet");
-			for(String s:set){
-				System.out.println(s);*/
 		}		
 	}
 }
