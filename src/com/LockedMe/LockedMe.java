@@ -2,13 +2,14 @@ package com.LockedMe;
 
 import java.io.IOException;
 import java.util.Scanner;
-import java.util.InputMismatchException;
+
 
 public class LockedMe {
 
 	public static void main(String[] args) throws IOException {
 	
 		boolean repeatMainContext, repeatOptions;
+		int operationSelected=0;
 			System.out.println("Application Name : LockedMe.com");
 			System.out.println("Name of Developer : Harsh Sharma");
 			
@@ -22,7 +23,6 @@ public class LockedMe {
 			System.out.println("1. Display all available file Names in directory");
 			System.out.println("2. Different Operations to Perform in directory");
 			System.out.println("3. Close the Application");
-			
 			
 			try {choice=new Scanner(System.in).nextInt();} catch(Exception e){}                        // exception handling
 			
@@ -43,8 +43,12 @@ public class LockedMe {
 					System.out.println("2. Delete File");
 					System.out.println("3. Search File");
 					System.out.println("4. Back");
-					Scanner UserChoiceOfOperation = new Scanner (System.in);
-					int operationSelected=UserChoiceOfOperation.nextInt();
+					
+					try
+					{	Scanner UserChoiceOfOperation = new Scanner (System.in);                      // exception handling
+						operationSelected=UserChoiceOfOperation.nextInt();
+					}
+					catch (Exception e) {}
 					
 						switch(operationSelected)
 						{

@@ -43,7 +43,7 @@ public class DifferentOperation {
 			return result2;
 		}
 	
-	public boolean search(String textinput3) {   				//Search method declaring
+	public boolean search(String textinput3) {   									//Search method declaring
 		String[] pathNames = { "E:", "Project", textinput3};
 		String pathSeperator = System.getProperty("file.separator");
 		String path = String.join(pathSeperator, pathNames);		
