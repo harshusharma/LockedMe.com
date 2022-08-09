@@ -75,7 +75,7 @@ public class LockedMe {
 								
 								{
 									if(result2==true)
-									System.out.println(textinput2+" file is deleted in directory");
+									System.out.println(textinput2+" file is deleted from directory");
 									else
 									System.out.println("The file is not deleted, as "+textinput2+" file does not exist in directory");	
 								}
